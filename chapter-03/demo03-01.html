@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>element</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="" />
+  <script src=""></script>
+</head>
+
+<body>
+  <code>
+        function f1 () {
+            console.log(1);
+        }
+    </code>
+  <div data-value="a" id="div1" data-user-name="yhan">
+    自定义属性
+  </div accesskey="d" contenteditable="true">
+    function f1 () { console.log(1); }
+  </div>
+  <p contenteditable="true" id="p1">单击可编辑</p>
+  <input type="text" accesskey="i" placeholder="快捷键alt + i" onchange="inputChange()" id="input1">
+  <p dir="ltr">规定文字对齐方式</p>
+  <p dir="rtl">规定文字对齐方式</p>
+  <p contextmenu="supermenu">本段落拥有一个名为 "supermenu" 的上下文菜单。这个菜单会在用户右键单击该段落时出现。</p>
+  
+  <menu id="supermenu">
+    <command label="Step 1: Write Tutorial" onclick="doSomething()">
+      <command label="Step 2: Edit Tutorial" onclick="doSomethingElse()">
+  </menu>
+  
+  <p>
+    <b>注释：</b>目前只有 Firefox 支持 contextmenu 属性。（火狐也不支持）
+  </p>
+  <p lang="en">语言说明</p>
+  <p spellcheck="true">yhan 拼写检查 style sy</p>
+  <p spellcheck="false">yhan 拼写检查 style sy</p>
+  <script>
+    let element = document.getElementById('div1');
+    let value = element.dataset.value;
+    let userName = element.dataset.userName;
+    let userName1 = element.dataset['user-name'];   // 无效
+    console.log(value);
+    console.log(userName);
+    console.log(userName1);
+
+    
+    function inputChange () {
+      let p1 = document.getElementById('p1');
+      let contentText = p1.innerHTML;
+      console.log('p1:'+contentText);
+      console.log('p1 value:'+ p1.value);
+      let input1 = document.getElementById('input1');
+      console.log(input1.value);
+    }
+  </script>
+</body>
+
+</html>
