@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>用路径绘图</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="div1">
+    <canvas id="canvas1" height="500p"></canvas>
+  </div>
+  <script>
+    let canvas = document.getElementById('canvas1');
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'yellow';
+    ctx.strokeStyle = 'black';
+    ctx.lineWindth = 4;
+    ctx.beginPath();
+    ctx.moveTo(10, 10);
+    ctx.lineTo(110, 10);
+    ctx.lineTo(110, 120);
+    ctx.closePath();
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(150, 10);
+    ctx.arc(200, 10,210,20,20);
+    ctx.lineTo(200, 120);
+    ctx.lineTo(190, 120);
+    ctx.closePath();
+
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(250, 10);
+    ctx.lineTo(250, 120);
+    ctx.stroke();
+  </script>
+</body>
+
+</html>
