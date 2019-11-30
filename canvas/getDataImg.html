@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>getDataImg</title>
+</head>
+
+<body>
+  <style>
+    .my-canvas {
+      width: 400px;
+      height: 300px;
+    }
+  </style>
+  <div class="canvas">
+    <canvas class="my-canvas" id="my-canvas"></canvas>
+  </div>
+  <script>
+    const img = new Image();
+    img.src = './test.png';
+    console.log(img)
+    document.getElementsByTagName('body')[0].append(img);
+    let myCanvas = document.getElementById('my-canvas');
+    ctx = myCanvas.getContext('2d');
+    console.log(myCanvas)
+    ctx.drawImage(img,300,300);
+  </script>
+</body>
+
+</html>
